@@ -1,4 +1,4 @@
-name: MirrorBot MacOS Environment
+name: MacOS 10.15
 
 on:
   workflow_dispatch:
