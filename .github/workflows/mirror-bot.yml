@@ -29,7 +29,7 @@ jobs:
           curl -X POST --header "Authorization: token ${{ secrets.GH_TOKEN }}" https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/mirror-bot.yml/dispatches -d '{"ref":"main"}'
 
   mirror:
-    runs-on: macos-11
+    runs-on: macos-10.15
     steps:
       - name: Set Git Configs & Secrets
         run: |
@@ -37,7 +37,7 @@ jobs:
           git config --global user.name ${GitHubName}
           git config --global credential.helper store
           echo "https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
-      - name: macOS Cleanup
+      - name: Cleanup
         # This takes much more time (around 42 minutes now) than that of Ubuntu
         uses: rokibhasansagar/slimhub_actions@mac
       - name: Setup docker
@@ -49,7 +49,7 @@ jobs:
           curl -sL https://github.com/boot2docker/boot2docker/releases/download/v19.03.12/boot2docker.iso -o ~/Downloads/boot2docker.iso
           docker-machine create -d virtualbox --virtualbox-disk-size=322123 --virtualbox-memory=8096 --virtualbox-cpu-count=-1 --virtualbox-boot2docker-url ~/Downloads/boot2docker.iso default
           docker-machine env default
-      - name: Clone The Secret Mirror Repository
+      - name: Clone Repository
         run: |
           git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.MIRROR_REPOSLUG }} source
       - name: Compile The Mirroring Docker Container
