@@ -42,7 +42,7 @@ jobs:
         uses: rokibhasansagar/slimhub_actions@mac
       - name: Setup docker
         run: |
-          brew install -f -q --cask virtualbox
+          brew install -f -q --cask virtualbox@5.0.12
           brew install -f -q --formula docker docker-machine
       - name: Setup VM
         run: |
