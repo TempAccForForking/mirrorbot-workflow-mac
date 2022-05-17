@@ -43,7 +43,7 @@ jobs:
       - name: Setup docker
         run: |
           brew install -f -q --cask virtualbox vagrant vagrant-manager
-          brew install -f -q --cask virtualbox
+    
           brew install -f -q --formula docker docker-machine
       - name: Setup VM
         run: |
