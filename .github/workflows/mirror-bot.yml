@@ -42,9 +42,9 @@ jobs:
         uses: rokibhasansagar/slimhub_actions@mac
       - name: Setup docker
         run: |
-          brew install -f -q --virtualbox@5.2.6
- 
-          brew install -f -q --formula docker docker-machine
+           brew install -f -q --cask virtualbox
+           brew install -f -q --formula docker docker-machine
+           brew services restart docker-machine
       - name: Setup VM
         run: |
           curl -sL https://github.com/boot2docker/boot2docker/releases/download/v19.03.12/boot2docker.iso -o ~/Downloads/boot2docker.iso
