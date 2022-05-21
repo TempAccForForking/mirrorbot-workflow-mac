@@ -39,7 +39,8 @@ jobs:
           echo "https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
       - name: Setup docker
         run: |
-           brew install --cask https://raw.githubusercontent.com/Homebrew/homebrew-cask/d3e2dcf026d20d2df6938aea1866a61f69c5de1a/Casks/virtualbox.rb
+           curl https://raw.githubusercontent.com/Homebrew/homebrew-cask/b2670d5d71ef29cfb0ad4011305f22d00a84e29e/Casks/virtualbox.rb >> virtualbox.rb
+           brew install -f -q --cask virtualbox.rb
            brew install -f -q --formula docker docker-machine
       - name: Setup VM
         run: |
