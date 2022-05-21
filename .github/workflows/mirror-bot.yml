@@ -42,9 +42,8 @@ jobs:
         uses: rokibhasansagar/slimhub_actions@mac
       - name: Setup docker
         run: |
-           brew install -f -q --cask virtualbox 
-           brew install -f -q --cask vagrant 
-           brew install -f -q --cask vagrant-manager 
+           curl https://raw.githubusercontent.com/Homebrew/homebrew-cask/b2670d5d71ef29cfb0ad4011305f22d00a84e29e/Casks/virtualbox.rb >> vb.rb
+           brew install --cask vb.rb
            brew install -f -q --formula docker docker-machine
       - name: Setup VM
         run: |
