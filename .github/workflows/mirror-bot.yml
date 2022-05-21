@@ -40,7 +40,7 @@ jobs:
       - name: Setup docker
         run: |
            curl https://raw.githubusercontent.com/Homebrew/homebrew-cask/b2670d5d71ef29cfb0ad4011305f22d00a84e29e/Casks/virtualbox.rb >> virtualbox.rb
-           brew install --cask vb.rb
+           brew install --cask virtualbox.rb
            brew install -f -q --formula docker docker-machine
       - name: Setup VM
         run: |
