@@ -42,6 +42,7 @@ jobs:
            curl https://raw.githubusercontent.com/Homebrew/homebrew-cask/b2670d5d71ef29cfb0ad4011305f22d00a84e29e/Casks/virtualbox.rb >> virtualbox.rb
            brew install --cask virtualbox.rb
            brew install -f -q --formula docker docker-machine
+           brew services restart virtualbox
       - name: Setup VM
         run: |
           curl -sL https://github.com/boot2docker/boot2docker/releases/download/v19.03.12/boot2docker.iso -o ~/Downloads/boot2docker.iso
