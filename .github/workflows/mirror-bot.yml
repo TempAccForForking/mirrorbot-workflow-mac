@@ -41,6 +41,10 @@ jobs:
         run: |
           brew install -f -q --cask virtualbox
           brew install -f -q --formula docker docker-machine
+          sudo kextload -b org.virtualbox.kext.VBoxDrv
+          sudo kextload -b org.virtualbox.kext.VBoxNetFlt
+          sudo kextload -b org.virtualbox.kext.VBoxNetAdp
+          sudo kextload -b org.virtualbox.kext.VBoxUSB
           
       - name: Setup VM
         run: |
