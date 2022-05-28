@@ -45,11 +45,6 @@ jobs:
           chmod +x /tmp/docker-machine &&
           sudo cp /tmp/docker-machine /usr/local/bin/docker-machine 
           sudo launchctl load /Library/LaunchDaemons/org.virtualbox.startup.plist 
-          sudo modprobe vboxdrv
-
-          sudo modprobe vboxnetadp - (host only interface)
-
-          sudo modprobe vboxnetflt
       - name: Setup VM
         run: |
           curl -sL https://github.com/boot2docker/boot2docker/releases/download/v19.03.12/boot2docker.iso -o ~/Downloads/boot2docker.iso
