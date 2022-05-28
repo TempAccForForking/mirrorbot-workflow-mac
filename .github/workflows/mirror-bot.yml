@@ -43,7 +43,8 @@ jobs:
           brew install -f -q --formula docker docker
           curl -sL https://github.com/docker/machine/releases/download/v0.16.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
           chmod +x /tmp/docker-machine &&
-          sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+          sudo cp /tmp/docker-machine /usr/local/bin/docker-machine 
+          sudo launchctl load /Library/LaunchDaemons/org.virtualbox.startup.plist
       - name: Setup VM
         run: |
           curl -sL https://github.com/boot2docker/boot2docker/releases/download/v19.03.12/boot2docker.iso -o ~/Downloads/boot2docker.iso
