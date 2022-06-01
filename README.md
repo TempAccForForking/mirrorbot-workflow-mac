@@ -4,7 +4,7 @@ You can use [this repo](https://github.com/lzzy12/python-aria-mirror-bot) as a t
 
 First setup everything then push to your private Repository
 
-Then Fork this Repo
+Then Fork this Repo [ [Suggested Commit to use](https://github.com/TempAccForForking/mirrorbot-workflow-mac/tree/6605706713dc564926291a7adb371abc34ba750d) ]
 
 Setup secrets in settings --> Secrets
 
